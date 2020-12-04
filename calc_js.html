@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+<style type="text/css">
+	body{
+		background-color: #8f9e9d;
+	}
+	.box{
+		border-radius: 10px;
+		background-color: #040404;
+		width:450px;
+		height: 570px;
+		margin: auto;
+		margin-top: 50px;
+	}
+	.but{
+		padding-left: 5px;
+		padding-top: 25px;
+	}
+	button{
+		width:70px;
+		height: 70px;
+		background-color: #6b66646b;
+		color:black;
+		font-weight: bold;
+		margin-left: 30px;
+		margin-bottom: 10px;
+		font-size: 22px;
+		border-radius: 15px;
+		data-shadow: 0 3px #999;
+		cursor: pointer;
+		outline: none;
+	}
+	p{
+		margin-top: 20px;
+		margin: auto;
+		width:98%;
+		height: 60px;
+		background-color: white;
+		font-weight: bold;
+		text-align: right;
+		font-size: 24px;
+		border-radius: 10px;
+	}
+</style>
+	<script type="text/javascript">
+		function one(){
+			document.getElementById("data").innerHTML+="1"
+		}
+		function two(){
+			document.getElementById("data").innerHTML+="2"
+		}
+		function thr(){
+			document.getElementById("data").innerHTML+="3"
+		}
+		function fou(){
+			document.getElementById("data").innerHTML+="4"
+		}
+		function fiv(){
+			document.getElementById("data").innerHTML+="5"
+		}
+		function six(){
+			document.getElementById("data").innerHTML+="6"
+		}
+		function sev(){
+			document.getElementById("data").innerHTML+="7"
+		}
+		function eig(){
+			document.getElementById("data").innerHTML+="8"
+		}
+		function nin(){
+			document.getElementById("data").innerHTML+="9"
+		}
+		function add(){
+			document.getElementById("data").innerHTML+="+"
+		}
+		function zer(){
+			document.getElementById("data").innerHTML+="0"
+		}
+		function sub(){
+			document.getElementById("data").innerHTML+="-"
+		}
+		function mul(){
+			document.getElementById("data").innerHTML+="*"
+		}
+		function div(){
+			document.getElementById("data").innerHTML+="/"
+		}
+		function sin(){
+			document.getElementById("data").innerHTML+="sin"
+		}
+		function cos(){
+			document.getElementById("data").innerHTML+="cos"
+		}
+		function tan(){
+			document.getElementById("data").innerHTML+="tan"
+		}
+		function leftb(){
+			document.getElementById("data").innerHTML+="("
+		}
+		function rightb(){
+			document.getElementById("data").innerHTML+=")"
+		}
+		function submit(){
+			let x=document.getElementById("data").innerHTML;
+			if(x.includes("sin")){
+				let n=x.match(/(\d+)/);
+				v=n[0];
+				r=Math.sin(v)
+				document.getElementById("data").innerHTML=r
+				
+			}
+			else if(x.includes("cos")){
+				let n=x.match(/(\d+)/);
+				v=n[0];
+				a=Math.cos(v)
+				document.getElementById("data").innerHTML=a
+			}
+			else if(x.includes("tan")){
+				let n=x.match(/(\d+)/);
+				v=n[0];
+				b=Math.tan(v)
+				document.getElementById("data").innerHTML=b
+			}
+			else{
+				let y=eval(x);
+				document.getElementById("data").innerHTML=y
+			}
+		}
+		function clr(){
+			document.getElementById("data").innerHTML=null;
+		}
+	</script>
+</head>
+<body>
+	<div class="box">
+		<p id="data"></p>
+		<div class="but">
+		<button style="font-size: 22px;margin-right: 2px; height: 60px;width: 80px;" onclick="clr()">AC</button><br>
+		<button onclick="one()">1</button>
+		<button onclick="two()">2</button>
+		<button onclick="thr()">3</button>
+		<button style="font-size: 22px;height:70px;width:70px;" onclick="add()">+</button><br>
+		<button onclick="fou()">4</button>
+		<button onclick="fiv()">5</button>
+		<button onclick="six()">6</button>
+		<button style="font-size: 22px;height:70px;width:70px;" onclick="sub()">-</button><br>
+		<button onclick="sev()">7</button>
+		<button onclick="eig()">8</button>
+		<button onclick="nin()">9</button>
+		<button style="font-size: 22px;height:70px;width:70px;background-color:#eadddd;" onclick="submit()">=</button><br>
+		<button style="font-size: 22px;height:70px;width:70px;" onclick="mul()">x</button>		
+		<button style="font-size: 22px;height:70px;width:70px;" onclick="zer()">0</button>
+		<button style="font-size: 22px;height:70px;width:70px;" onclick="div()">/</button>
+		<button style="font-size: 22px;height:70px;width:70px;" onclick="leftb()">(</button><br>
+		<button style="font-size: 22px;height:70px;width:70px;" onclick="sin()">sin</button>
+		<button style="font-size: 22px;height:70px;width:70px;" onclick="cos()">cos</button>
+		<button style="font-size: 22px;height:70px;width:70px;" onclick="tan()">tan</button>
+		<button style="font-size: 22px;height:70px;width:70px;" onclick="rightb()">)</button><br>
+		</div>
+	</div>
+
+</body>
+</html>
